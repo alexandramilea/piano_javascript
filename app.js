@@ -1,6 +1,7 @@
 // Selected key for each button
 const whiteKey = ['z','x','c','v','b','n','m'];
 const blackKey = ['s','d','g','h','j'];
+const wrongAnswers = ["Ab, B, A", "Dd, B, Bb", "Ab, Aa, Cc"]
 
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
@@ -45,6 +46,7 @@ function play(){
     const notes = localStorage.getItem("NOTE_PRESSED").split(",")
     const allNotes = ["A", "Ab", "B", "Bb"]
     if(notes.length === 0){
+        console.log("first")
         setTimeout(function(){
             const randomIndex = Math.floor(Math.random()* allNotes.length)
             const n = allNotes[randomIndex]
@@ -59,21 +61,43 @@ function play(){
             noteAudio.play();
                 }, 1000*i)
     }else {
-        for(i; i<notes.length;i++){
+        let rightAnswerValue
+        for(let i = 0; i<3;i++){
             setTimeout(function(){
                 const randomIndex = Math.floor(Math.random()* allNotes.length)
                 const n = allNotes[randomIndex]
                 randomNotePressed.push(n)
                 localStorage.setItem("NOTE_PRESSED" , randomNotePressed)
-                const rightAnswerValue = localStorage.getItem("NOTE_PRESSED")
-                document.getElementById('rightanswer').innerHTML= rightAnswerValue
+                rightAnswerValue = localStorage.getItem("NOTE_PRESSED")
                 //document.getElementById("wronganswer1").innerHTML = rightAnswerValue
                 //document.getElementById("wronganswer2").innerHTML = rightAnswerValue
                 const noteAudio = document.getElementById(n);
                 noteAudio.currentTime = 0;
                 noteAudio.play();
+
+                if (i === 2) {
+                    const buttons = document.querySelector('.answers > *')
+                    const random = Math.floor(Math.random() * 3)
+                    document.querySelectorAll('.answers > *')[random].innerText = rightAnswerValue
+                    document.querySelectorAll('.answers > *')[random].addEventListener("click", win)
+                    document.querySelectorAll('.answers > *').forEach((button, i) => {
+                        if (i !== random) {
+                            button.innerText = wrongAnswers[i]
+                        }
+                    })
+                }
+
                     }, 1000*i)
                 }
     }
     
+}
+
+function win () {
+    alert("You win!")
+}
+
+
+function lost () {
+    alert("You lost!")
 }
