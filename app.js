@@ -83,6 +83,7 @@ function play(){
                     document.querySelectorAll('.answers > *').forEach((button, i) => {
                         if (i !== random) {
                             button.innerText = wrongAnswers[i]
+                            button.addEventListener("click", lost)
                         }
                     })
                 }
@@ -94,13 +95,23 @@ function play(){
 }
 
 function win () {
+    document.getElementById("bds1").play()
     alert("You win!")
+
 }
 
 
 function lost () {
+    console.log(document.getElementById("bds"))
+    document.getElementById("bds").play()
     alert("You lost!")
+
+
+
+
 }
+
+
 
 function restart () {
     location.reload();
