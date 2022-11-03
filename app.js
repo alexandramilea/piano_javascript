@@ -1,7 +1,7 @@
 // Selected key for each button
-const whiteKey = ['z','x','c','v','b','n','m'];
+const whiteKey = ['y','x','c','v','b','n','m'];
 const blackKey = ['s','d','g','h','j'];
-const wrongAnswers = ["Ab, B, A", "Dd, B, Bb", "Ab, Aa, Cc"]
+const wrongAnswers = ["G, Dd, G", "Dd, B, Bb", "Ab, Ee, Cc"]
 
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');

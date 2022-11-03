@@ -4,9 +4,13 @@
     margin: 0px;
 }
 
-
+h1 {
+    text-align-last: center;
+    color: #fff;
+    margin: 40px;
+}
 body {
- background-image: none;
+ background-image: url(./img/pianoimg.png);
  min-height: 100vh;
  display: flex;
  justify-content: center;
@@ -34,6 +38,8 @@ body {
     width: 60px;
     height: 50px;
 }
+
+
 
 
 .key{
@@ -64,3 +70,20 @@ body {
 .black.active{
   background-color: #333;  
 }
+
+.class-buttons-controls {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+
+.class-buttons-controls button , .answers button{
+    margin-top: 20px;
+    width: 120px;
+    padding: 10px;
+
+    
+   
+}
+

@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piano Music Project</title>
     <link rel="stylesheet" href="./style.css">
-    
 
 </head>
 
 
 <body> 
     
- 
+   
+
  
  <script>
     localStorage.setItem("NOTE_PRESSED", null)</script>
     <div class="wrapper">
+
+        <h1>Space Piano</h1>
+
     <div class="wrapper-piano">
         <div data-note="C" class="key white"></div>
         <div data-note="Db" class="key black"></div>
@@ -40,12 +43,10 @@
             <button id="answer3"></button> 
         </div>
 
-        <button class="startbutton" onclick ="play()"> Start </button>
-
-        <button class="refresh" onclick ="restart()"> Play Again </button>
-
+        <div class="class-buttons-controls">
+            <button class="startbutton" onclick ="play()"> Start </button>
+            <button class="refresh" onclick ="restart()"> Play Again </button>
         </div>
-
 
     </div>
 
