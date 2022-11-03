@@ -101,3 +101,14 @@ function win () {
 function lost () {
     alert("You lost!")
 }
+
+function restart () {
+    location.reload();
+}
+
+
+
+
+
+
+
