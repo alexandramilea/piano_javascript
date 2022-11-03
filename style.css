@@ -16,6 +16,18 @@ body {
 .wrapper-piano {
     display: flex;
 }
+.buttons {
+    display: block;
+}
+.wrapper {
+ display: block;
+}
+
+.startbutton {
+    margin-top: 20px;
+    width: 60px;
+    height: 50px;
+}
 
 
 .key{
